@@ -1,6 +1,6 @@
 {
   "name": "photoshop-scripts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Photoshop scripts to process images",
   "main": "index.js",
   "scripts": {
