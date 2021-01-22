@@ -1,5 +1,5 @@
-import child_process from 'child_process';
-import path from 'path';
+const child_process = require('child_process');
+const path = require('path');
 
 const PATH_TO_SCRIPTS = path.resolve(__dirname, './bash');
 
@@ -28,15 +28,12 @@ function spawn(script, args, callback, onError, onComplete) {
     })
 }
 
-export const photoshop = (command, args) => {
-    let params = [command];
+module.exports.photoshop = function(command, args) {
+    const params = [command];
     if (args && args.length > 0) {
-        for (var i in args) params.push(args[i])
+        for (var i in args) {
+            params.push(args[i]);
+        }
     }
-    spawn("photoshop.sh", params, 
-    (stdout) => {
-        console.log('photoshop.sh stdout', stdout);
-    },(stderr) => {
-        console.log('photoshop.sh stderr', stderr);
-    })
-}
+    spawn("photoshop.sh", params);
+};
