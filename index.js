@@ -35,5 +35,11 @@ module.exports.photoshop = function(command, args) {
             params.push(args[i]);
         }
     }
-    spawn("photoshop.sh", params);
+    spawn("photoshop.sh", params,
+    function(stdout) {
+        // console.log('photoshop.sh stdout', stdout);
+    }, 
+    function(stderr) {
+        console.log('photoshop.sh stderr', stderr);
+    });
 };
