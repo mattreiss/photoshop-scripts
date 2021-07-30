@@ -12,7 +12,7 @@ FileUtil.saveJpg = function(dir, fileName, quality) {
 }
 
 FileUtil.sortFiles = function(folder) {
-  var selectedFileList = folder.getFiles(/\.(jpg|jpeg|cr2|ARW|psd)$/i);
+  var selectedFileList = folder.getFiles(/\.(jpg|jpeg|cr2|ARW|psd|dng|png)$/i);
   if (!selectedFileList || selectedFileList.length < 2) {
     return alert("Please select a folder with 2 or more files you want to stack");
   }
